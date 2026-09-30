@@ -7,6 +7,10 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    // Query per esercitazione:
+    // Restituisce tutti i prodotti con co2_saved superiore a 350: "SELECT * FROM products WHERE co2_saved > 350";
+    // Calcolo della co2 risparmiata per tutti i prodotti registrati: "SELECT SUM(co2_saved) FROM products";
+
     // Per le REST Api si utilizzano funzioni con nomi specifici:
     // Funzione Index per ritornare in formato json la risposta di tutti i post con 200 come status OK
     public function index(){
@@ -50,7 +54,7 @@ class ProductController extends Controller
             return response()->json(['message' => 'Prodotto eliminato con successo'], 200);
     }
 
-    public function co2_total(){
+    public function co2Total(){
         // Calcolo la somma della colonna co2_saved direttamente con un metodo eloquent
         $sum_co2_total = Product::sum('co2_saved');
         return response()->json(['co2_total' => $sum_co2_total], 200);

@@ -17,7 +17,7 @@ Route::post('/products', [ProductController::class, 'store'])->name('new_product
 
 // co2_total: API per la restituzione della somma totale di co2 risparmiata
 // Inseriamo prima la Route statica così siamo sicuri che non abbiamo interferenze con quelle dimamiche {product}
-Route::get('/products/co2-total',[ProductController::class, 'co2_total'])->name('co2_total');
+Route::get('/products/co2-total',[ProductController::class, 'co2_total'])->name('co2Total');
 
 // In Update e Destroy inseriamo una validazione in più (route contraint), il valore dinamico product deve essere
 // un numero con il metodo where, così siamo ancora più sicuri che non ci sia conflitto

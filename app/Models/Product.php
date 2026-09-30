@@ -12,7 +12,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    // Con la funzione cast andiamo a definire che co2_saved deve essere un integer, la stringa di name viene gestita automaticamente
+    // Con la funzione casts andiamo a definire che co2_saved deve essere un integer, la stringa di name viene gestita automaticamente
     protected function casts(): array
     {
         return [
